@@ -1,0 +1,193 @@
+ /* 入学指南页面专属样式 */
+        .admission-main {
+            max-width: 1000px;
+            margin: 120px auto 60px;   /* 留出顶部空间，避免被固定导航栏遮挡 */
+            padding: 0 20px;
+        }
+        .admission-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .admission-intro h1 {
+            font-size: 2.5rem;
+            color: #2d5a27;
+            margin-bottom: 15px;
+        }
+        .admission-intro p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* 流程步骤 */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 70px;
+        }
+        .step-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .step-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .step-card p {
+            color: #777;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* FAQ 折叠面板 */
+        .faq-section {
+            margin-bottom: 70px;
+        }
+        .faq-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .faq-question {
+            display: block;
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 25px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            position: relative;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 25px;
+            color: #555;
+            line-height: 1.7;
+            background: #fafafa;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 200px;   /* 足够显示内容，如果内容多可调大 */
+            padding: 15px 25px;
+        }
+        .faq-item.open .faq-question::after {
+            content: '−';
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        /* 下载 & 链接区域 */
+        .download-links {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .qr-placeholder {
+            width: 160px;
+            height: 160px;
+            background: #f4f4f4;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 0.85rem;
+            border: 2px dashed var(--primary);
+        }
+        .download-info {
+            flex: 1;
+        }
+        .download-info h2 {
+            margin-bottom: 15px;
+            color: #2d5a27;
+        }
+        .download-info p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .download-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-ios {
+            background: #000;
+            color: white;
+        }
+        .btn-android {
+            background: #3cb371;
+            color: white;
+        }
+        .btn-official {
+            background: #fff;
+            border: 2px solid #3cb371;
+            color: #3cb371;
+        }
+        .btn-download:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .admission-main {
+                margin-top: 100px;
+            }
+            .download-links {
+                flex-direction: column;
+                text-align: center;
+            }
+        }

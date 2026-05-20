@@ -1,0 +1,245 @@
+/* ==========================================================================
+   特雷森侧边挂件与 BGM 播放器样式
+   ========================================================================== */
+:root {
+    --primary: #3cb371;      /* 鲜艳的草地绿 */
+    --accent: #ff69b4;       /* 活力樱花粉 */
+    --gold: #ffce44;         /* 明亮金 */
+}
+
+/* 侧边吉祥物 */
+.side-mascot-panel {
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
+    z-index: 999;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.side-mascot-panel:hover { transform: scale(1.1); }
+
+.mascot-bubble {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid var(--primary);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.side-mascot-panel:hover .mascot-bubble { opacity: 1; }
+
+.mascot-img { 
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); }
+
+
+/* 侧边整体容器 */
+.side-mascot-panel {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-family: sans-serif;
+}
+
+/* 1. 看板娘对话气泡 */
+.mascot-bubble {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--primary);
+    border-radius: 18px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none; /* 悬停在看板娘上才触发 */
+}
+/* 气泡小箭头 */
+.mascot-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: var(--primary) transparent;
+    display: block;
+    width: 0;
+}
+
+/* 悬停展示气泡 */
+.side-mascot-panel:hover .mascot-bubble {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 2. 吉祥物头像包装器 */
+.mascot-avatar-wrap {
+    position: relative;
+    cursor: pointer;
+}
+
+.mascot-img {
+    width: 110px;
+    height: auto;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.mascot-avatar-wrap:hover .mascot-img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* 动态音符效果 */
+.music-note-ani {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+}
+.side-mascot-panel.is-playing .music-note-ani {
+    animation: bounceNote 1.5s infinite ease-in-out;
+}
+
+/* 3. BGM 控制器面板 */
+.bgm-widget {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--primary);
+    border-radius: 30px;
+    padding: 6px 14px;
+    box-shadow: 0 5px 15px rgba(60, 179, 113, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+.bgm-widget:hover {
+    background: #fff;
+    border-color: var(--accent);
+}
+
+/* 播放按钮 */
+.bgm-btn {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.bgm-btn:hover {
+    background: var(--accent);
+    transform: scale(1.1);
+}
+
+/* 音量滑动条区域 */
+.volume-slider-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.vol-icon {
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+/* 二次元风格的自定义 Range 滑块 */
+.bgm-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 65px;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    outline: none;
+}
+.bgm-slider::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 3px;
+}
+.bgm-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--gold);
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: -4px;
+    transition: transform 0.1s;
+}
+.bgm-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* 4. 回到顶部按钮（精简放置在更低端） */
+.back-to-top {
+    position: fixed;
+    right: 32px;
+    bottom: 30px;
+    width: 44px;
+    height: 44px;
+    background: var(--gold);
+    color: var(--primary);
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s, background-color 0.2s;
+    z-index: 1000;
+}
+.back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.back-to-top:hover {
+    background-color: #ffb800;
+}
+
+/* 动画：音符跳动 */
+@keyframes bounceNote {
+    0%, 100% {
+        transform: translate(0, 0) scale(1) rotate(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(15px, -15px) scale(1.2) rotate(15deg);
+        opacity: 1;
+    }
+}

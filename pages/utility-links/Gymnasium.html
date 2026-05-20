@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/source/favicon.ico">
+    <title>特雷森学园</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/side.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/link-student.css">
+    <link rel="stylesheet" href="/css/visitors.css">
+    <link rel="stylesheet" href="/css/Gym.css">
+    <!-- 后续模块的样式继续添加 -->
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<div class="utility-bar">
+    <div class="utility-links">
+        <a href="/pages/utility-links/Student.html" class="utility-link">学生</a>
+        <a href="/pages/utility-links/Staff.html" class="utility-link">教职工</a>
+        <a href="/pages/utility-links/Guest.html" class="utility-link">访客</a>
+        <a href="/pages/utility-links/Recruitment.html" class="utility-link">招聘</a>
+        <a href="/pages/utility-links/Library.html" class="utility-link">图书馆</a>
+        <a href="/pages/utility-links/Gymnasium.html" class="utility-link">体育馆</a>
+    </div>
+</div>
+
+<!-- 主导航区域 -->
+<header class="header" id="navbar">
+    <div class="header-inner">
+        <div class="logo-area">
+            <img src="/source/schoolbadge.jpg" alt="校徽" class="logo">
+            <span class="site-name">中央特雷森学院</span>
+        </div>
+
+        <button id="menuToggle" class="menu-toggle">☰</button>
+        <nav class="nav" id="navMenu">
+            <ul class="nav-menu">
+                <li><a href="/index.html">首页</a></li>
+                <li class="has-submenu">
+                    <a href="/pages/intro/intro.html">学园介绍</a>
+                    <ul class="submenu">
+                        <li><a href="/pages/intro/history.html">校史</a></li>
+                        <li><a href="/pages/intro/compus.html">设施</a></li>
+                        <li><a href="/pages/intro/president.html">理事长</a></li>
+                        <li><a href="/pages/intro/motto.html">校训·校徽</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="/pages/faculty/faculty.html">人才师资</a>
+                    <ul class="submenu">
+                        <li><a href="/pages/faculty/teachers.html">教师团队</a></li>
+                        <li><a href="/pages/faculty/trainers.html">训练员</a></li>
+                        <li><a href="/pages/faculty/students.html">优秀学生</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="/pages/news/news.html">新闻活动</a>
+                    <ul class="submenu">
+                        <li><a href="/pages/news/notifications.html">最新通知</a></li>
+                        <li><a href="/pages/news/announcements.html">活动预告</a></li>
+                        <li><a href="/pages/news/reports.html">比赛报道</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/admission/admission.html">入学指南</a></li>
+            </ul>
+        <!-- 搜索框 -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索...">
+                <button type="button" id="searchBtn">🔍</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <!-- 全屏高度左侧边栏 -->
+<div class="tracen-gym-page">
+    <!-- 左侧固定侧边栏 (V2版本) -->
+    <aside class="tracen-v2-sidebar-container">
+        <div class="tracen-v2-branding">
+            <div class="tracen-v2-logo-circle">
+                <img src="/source/schoolbadge.png" alt="特雷森校徽">
+            </div>
+            <div class="tracen-v2-motto-text">
+                <p>一马当先</p>
+                <p>万马无光</p>
+            </div>
+        </div>
+
+        <nav class="tracen-v2-main-nav">
+            <ul class="tracen-v2-nav-list">
+                <li class="tracen-v2-nav-item tracen-v2-nav-header"><span class="tracen-v2-dot-filled">●</span> 场馆首页</li>
+                <li class="tracen-v2-nav-item"><span class="tracen-v2-dot-outline">○</span> 跑道预约</li>
+                <li class="tracen-v2-nav-item"><span class="tracen-v2-dot-outline">○</span> 游泳馆</li>
+                <li class="tracen-v2-nav-item"><span class="tracen-v2-dot-outline">○</span> 力量训练室</li>
+            </ul>
+        </nav>
+
+        <div class="tracen-v2-sidebar-footer">
+            <button class="tracen-v2-fancy-btn tracen-v2-btn-solid">智能训练推荐</button>
+        </div>
+    </aside>
+
+    <!-- 右侧主体内容 (避让侧边栏并居中) -->
+    <main class="tracen-gym-main">
+        <div class="tracen-gym-centered-container">
+            
+            <!-- 体育馆视觉大图 -->
+            <section class="tracen-gym-hero">
+                <div class="tracen-gym-banner">
+                    <img src="/source/bg_0020_00110.png" alt="体育馆全景">
+                    <div class="tracen-gym-overlay">
+                        <h3>中央赛马娘训练中心 - 综合体育馆</h3>
+                        <p>追求极致的速度，从这里开始</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 三栏式：场馆实时状态 -->
+            <section class="tracen-gym-status-grid">
+                <div class="tracen-gym-card">
+                    <div class="tracen-gym-card-header">
+                        <h4>草地跑道 (Turf)</h4>
+                        <span class="status-tag online">开放中</span>
+                    </div>
+                    <p class="desc">适合提升加速度与终点冲刺训练。</p>
+                </div>
+                <div class="tracen-gym-card">
+                    <div class="tracen-gym-card-header">
+                        <h4>泥地跑道 (Dirt)</h4>
+                        <span class="status-tag warning">维护中</span>
+                    </div>
+                    <p class="desc">力量与持久力的磨炼之地。</p>
+                </div>
+                <div class="tracen-gym-card">
+                    <div class="tracen-gym-card-header">
+                        <h4>室内游泳馆</h4>
+                        <span class="status-tag online">开放中</span>
+                    </div>
+                    <p class="desc">通过阻力训练强化躯干核心。</p>
+                </div>
+            </section>
+
+            <!-- 模块：今日训练课表 -->
+            <section class="tracen-gym-schedule">
+                <div class="tracen-gym-section-box">
+                    <h4 class="tracen-gym-title">今日场馆排期</h4>
+                    <table class="tracen-gym-table">
+                        <thead>
+                            <tr>
+                                <th>时间段</th>
+                                <th>项目</th>
+                                <th>指导教练</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>09:00 - 11:00</td><td>耐力持久跑训练</td><td>骏川手纲</td><td>已满额</td></tr>
+                            <tr><td>14:00 - 16:00</td><td>爆发力起跑练习</td><td>乙名史悦子</td><td>接受报名</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</div>
+
+    <section class="quick-links anime-style">
+        <div class="container link-grid">
+            <a href="/pages/admission/admission.html" class="link-item">
+                <div class="icon-circle bg-pink"><i class="fas fa-edit"></i></div>
+                <span>报名入学</span>
+            </a>
+            <a href="/pages/intro/compus.html" class="link-item">
+                <div class="icon-circle bg-green"><i class="fas fa-running"></i></div>
+                <span>训练设施</span>
+            </a>
+            <a href="/pages/news/news.html" class="link-item">
+                <div class="icon-circle bg-gold"><i class="fas fa-trophy"></i></div>
+                <span>URA赛事</span>
+            </a>
+            <a href="/pages/building.html" class="link-item">
+                <div class="icon-circle bg-blue"><i class="fas fa-shopping-cart"></i></div>
+                <span>建设中</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="footer-links-bar">
+    <div class="links-container">
+        <span class="links-label">友情链接：</span>
+        <a href="/pages/building.html">日本赛马协会 (URA)</a>
+        <a href="/pages/building.html">特雷森学园后援会</a>
+        <a href="/pages/building.html">赛马娘综合信息网</a>
+        <a href="/pages/building.html">Twinkle Series 官方票务</a>
+    </div>
+    </div>
+
+    <!-- 悬浮交互组件 -->
+    <div class="side-mascot-panel" id="sideMascotPanel">
+    <div class="mascot-bubble" id="mascotBubble">训练员，今天要加油哦！</div>
+    
+    <div class="mascot-avatar-wrap">
+        <img src="/source/rice1.png" alt="吉祥物" class="mascot-img" id="mascotImg">
+        <span class="music-note-ani" id="musicNote">♪</span>
+    </div>
+
+    <div class="bgm-widget">
+        <button id="bgmPlayBtn" class="bgm-btn" title="播放/暂停">
+            <span class="btn-icon">▶</span>
+        </button>
+        <div class="volume-slider-wrap">
+            <span class="vol-icon">⏸</span>
+            <input type="range" id="bgmVolume" class="bgm-slider" min="0" max="1" step="0.05" value="0.5">
+        </div>
+    </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top">▲</button>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+    <div class="footer-container">
+        <!-- 上层：Logo 部分 -->
+        <div class="footer-logo">
+            <img src="/source/schoolbadge.png" alt="特雷森学园Logo">
+            <div class="logo-text">
+                <span class="cn-name">中央特雷森学园</span>
+                <span class="en-name">CENTRE TRAICEN ACADEMY</span>
+            </div>
+        </div>
+
+        <!-- 下层：版权与备案信息 -->
+        <div class="footer-info">
+            <span>版权所有©中央特雷森学园</span>
+            <span class="divider">|</span>
+            <span>地址：东京都府中市特雷森通1号</span>
+            <span class="divider">|</span>
+            <span>反馈意见：training@traicen.edu.jp</span>
+            <span class="divider">|</span>
+            <span>赛马娘备案口口口口号-1</span>
+            <span class="divider">|</span>
+            <span>府中公网安备 口口口口 号</span>
+        </div>
+    </div>
+    </footer>
+
+    <script src="/js/mascot.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/hero.js"></script>
+    <script src="/js/news.js"></script>
+    <script src="/js/scroll-header.js"></script>
+    <script src="/js/schedule.js"></script>
+    <script src="/js/teams.js"></script>
+    <script src="/js/effects.js"></script>
+    <!-- 其他模块的脚本 -->
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector('.faq-question');
+        questionBtn.addEventListener('click', () => {
+            // 关闭其他打开的
+            faqItems.forEach(other => {
+                if (other !== item) other.classList.remove('open');
+            });
+            // 切换当前
+            item.classList.toggle('open');
+        });
+    });
+});
+</script>
+
+</body>
+</html>

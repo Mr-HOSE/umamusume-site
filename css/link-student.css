@@ -1,0 +1,744 @@
+/* 侧边栏主体 */
+.side-nav-bar {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* 垂直居中 */
+    width: 120px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius); /* 使用之前定义的 16px 圆角 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* 确保在所有内容之上 */
+    padding: 15px 0;
+    backdrop-filter: blur(5px); /* 背景模糊效果 */
+    border-left: 4px solid #8c0000; /* 左侧红色装饰条 */
+}
+
+/* 侧边栏标题 */
+.side-nav-header {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.side-nav-header span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #8c0000;
+}
+
+/* 导航菜单 */
+.side-nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-nav-menu li a {
+    display: block;
+    padding: 12px 15px;
+    color: var(--text-main); /* 使用全局文本色 */
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* 悬停与激活状态 */
+.side-nav-menu li a:hover,
+.side-nav-menu li a.active {
+    background-color: rgba(140, 0, 0, 0.05);
+    color: #8c0000;
+    font-weight: bold;
+}
+
+/* 响应式：屏幕太小时隐藏侧边栏，避免遮挡内容 */
+@media (max-width: 1300px) {
+    .side-nav-bar {
+        display: none;
+    }
+}
+
+
+
+.student-page-section {
+    max-width: 1100px;
+    margin: 120px auto;
+    padding: 0 20px;
+}
+
+.section-header h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* 网格容器设置 */
+.student-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.5fr; /* 三列比例 */
+    grid-template-rows: 240px 180px;      /* 两行高度 */
+    gap: 15px;
+    /* 定义网格区域 */
+    grid-template-areas: 
+        "course tools tools"
+        "course notice deco";
+}
+
+/* 基础卡片样式 */
+.student-card {
+    padding: 30px;
+    position: relative;
+}
+
+.student-card h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+/* 区域分配 */
+.card-deep-red { 
+    grid-area: course; 
+    background-color: #3cb371; 
+    color: #fff;
+    /* 模拟底部的建筑剪影背景 */
+    background-image: url('/');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card-white { 
+    grid-area: tools; 
+    background-color: #fff; 
+    border: 1px solid #eee;
+    color: #333;
+}
+
+.card-grey { 
+    grid-area: notice; 
+    background-color: #a6a6a6; 
+    color: #fff;
+}
+
+.card-img-bg { 
+    grid-area: deco; 
+    background-image: url('/'); /* 校舍图 */
+    background-size: cover;
+    background-position: center;
+}
+
+/* 列表样式 */
+.link-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.link-list li {
+    width: 33.33%; /* 默认三列排列 */
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.link-list li a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* 模拟参考图中的红色小三角/勾号 */
+.link-list li a::before {
+    content: "◢"; 
+    font-size: 8px;
+    margin-right: 8px;
+    transform: rotate(-45deg);
+}
+
+/* 特殊列表处理 */
+.link-list.colored li a::before { color: #8c0000; } /* 白色卡片里的红勾 */
+.link-list.horizontal li { width: auto; margin-right: 30px; } /* 通知栏横向排 */
+
+/* 容器布局 */
+.student-affairs-section {
+    background-color: #332c2b; /* 深咖啡色背景，与参考图一致 */
+    padding: 60px 0;
+    color: #ffffff;
+}
+
+.affairs-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 左右等分 */
+    background-color: #453e3d; /* 内容区稍浅的背景色 */
+}
+
+/* 左侧文字内容样式 */
+.affairs-content {
+    padding: 40px 50px;
+}
+
+.affairs-main-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.affairs-group h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+/* 链接列表布局 */
+.affairs-links {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 链接两列排列 */
+    gap: 15px;
+}
+
+.affairs-links li a {
+    color: #d1d1d1;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.affairs-links li a:hover {
+    color: #ffffff;
+}
+
+/* 模拟参考图中的红色小三角 */
+.affairs-links li a::before {
+    content: "◢"; 
+    font-size: 8px;
+    margin-right: 8px;
+    color: #8c0000;
+    transform: rotate(-45deg);
+}
+
+/* 分割线 */
+.affairs-divider {
+    border: none;
+    border-top: 1px solid #5a5251;
+    margin: 30px 0;
+}
+
+/* 右侧图片样式 */
+.affairs-image {
+    width: 100%;
+    height: 100%;
+}
+
+.affairs-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片充满容器且不变形 */
+    display: block;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .affairs-container {
+        grid-template-columns: 1fr; /* 手机端改为上下堆叠 */
+    }
+    .affairs-image {
+        height: 250px;
+    }
+    .affairs-links {
+        grid-template-columns: 1fr; /* 手机端链接单列显示 */
+    }
+}
+
+/* 整体容器 */
+.life-service-section {
+    padding: 80px 0;
+    background-color: #fff;
+    background-image: url('/');/*背景图*/ 
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 400px;
+}
+
+.life-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative; /* 关键：为子元素定位提供参照 */
+    height: 450px;
+}
+
+/* 图片区域：靠左放置 */
+.life-image-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 65%; /* 图片占据较大宽度 */
+    height: 100%;
+    z-index: 1;
+}
+
+.life-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+/* 红色装饰块：在图片右下方错落显示 */
+.red-border-deco {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 60%;
+    height: 80%;
+    background-color: #3cb371;
+    z-index: 1;
+}
+
+/* 悬浮文字卡片：靠右并浮于上方 */
+.life-content-card {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+    width: 450px;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    z-index: 10; /* 确保在最上层 */
+    border-radius: 4px;
+}
+
+/* 链接网格：两列分布 */
+.life-links {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 40px;
+}
+
+.life-links li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+/* 模拟参考图中的红色小箭头 */
+.life-links li a::before {
+    content: "◢"; 
+    font-size: 9px;
+    margin-right: 12px;
+    color: #8c0000;
+    transform: rotate(-45deg); /* 旋转成小箭头形状 */
+}
+
+.life-links li a:hover {
+    color: var(--primary); /* 悬停时变为草地绿 */
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .life-container {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .life-image-wrap, .life-content-card {
+        position: static;
+        width: 100%;
+    }
+    .life-content-card {
+        margin-top: -40px; /* 移动端保持一点重叠感 */
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .red-border-deco {
+        display: none;
+    }
+}
+
+.office-service-section {
+    padding: 100px 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.office-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 500px;
+}
+
+/* 左侧图片：占据左侧并向右延伸 */
+.office-image-box {
+    width: 70%;
+    height: 90%;
+    z-index: 1;
+}
+
+.office-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* 右侧红色卡片：绝对定位并压在图片上 */
+.office-card-red {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    background-color: rgba(140, 0, 0, 0.95); /* 深红色半透明 */
+    color: #fff;
+    padding: 60px 50px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+
+.office-title {
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+/* 链接网格：三列分布 */
+.office-link-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 10px;
+}
+
+.office-link-grid li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+/* 红色背景下的白色小箭头 */
+.office-link-grid li a::before {
+    content: "◢";
+    font-size: 8px;
+    margin-right: 8px;
+    color: rgba(255,255,255,0.5);
+    transform: rotate(-45deg);
+}
+
+.office-link-grid li a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+/* 祥云装饰底纹 */
+.cloud-deco-white {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 150px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* 移动端适配 */
+@media (max-width: 992px) {
+    .office-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .office-image-box, .office-card-red {
+        position: static;
+        width: 100%;
+    }
+    .office-card-red {
+        padding: 40px 20px;
+    }
+    .office-link-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* 1. 教职工侧边栏专属样式 */
+.faculty-theme {
+    border-left: 4px solid #004d40; /* 采用更沉稳的深绿或墨蓝色区分 */
+}
+
+.faculty-theme .side-nav-header span,
+.faculty-theme .side-nav-menu li a.active,
+.faculty-theme .side-nav-menu li a:hover {
+    color: #004d40;
+}
+
+/* 2. 深色办公板块微调 */
+.faculty-dark-theme {
+    background-color: #2c3e50; /* 比学生事务稍微偏蓝一点，显得专业 */
+}
+
+.faculty-dark-theme .affairs-container {
+    background-color: #34495e;
+}
+
+/* 3. 错落风格板块样式 (共用之前的 life-service-section 逻辑) */
+/* 确保这里的箭头颜色与主题色一致 */
+.life-links li a::before {
+    color: #8c0000;
+}
+
+/* 4. 页面主体间距 */
+.faculty-main-content {
+    margin-left: 160px; /* 为左侧固定导航栏留出空间 */
+    margin-right: 160px;
+    padding-right: 20px;
+}
+
+@media (max-width: 1300px) {
+    .faculty-main-content {
+        margin-left: 0;
+    }
+}
+
+/* CSS 栅格化实现 */
+.convenience-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* 仿照图中的非等分比例 */
+    grid-template-rows: repeat(2, 200px);
+    gap: 15px;
+    padding: 40px 0;
+}
+
+.grid-item { background: #f5f3f0; border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.grid-main-img { grid-row: span 2; } /* 左侧大图卡片 */
+
+
+/* 定义独立变量，防止污染全局 */
+:root {
+    --tracen-v2-green: #7a8a2d;     /* 还原图片中的草地绿 */
+    --tracen-v2-gold: #e6a23c;      /* 还原图片中的点缀橙/金 */
+    --sidebar-v2-width: 300px;
+}
+
+.tracen-v2-sidebar-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--sidebar-v2-width);
+    height: 100vh;
+    background-color: var(--tracen-v2-green);
+    border-right: 2px dashed rgba(255, 255, 255, 0.3); /* 侧边缝线效果 */
+    z-index: 9999;
+    color: white;
+    padding: 50px 25px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* 内部装饰线*/
+.tracen-v2-sidebar-container::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+/* 品牌区样式 */
+.tracen-v2-branding { text-align: center; margin-bottom: 50px; }
+.tracen-v2-motto-text {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* 搜索框：半透明圆角设计 */
+.tracen-v2-search-input-wrap {
+    display: flex;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 5px 5px 5px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.tracen-v2-search-input-wrap input {
+    background: transparent; border: none; color: white; width: 100%; outline: none;
+}
+.tracen-v2-search-icon-btn {
+    background: var(--tracen-v2-gold);
+    border: none; border-radius: 50%;
+    width: 38px; height: 38px; cursor: pointer; color: white;
+}
+
+/* 导航项 */
+.tracen-v2-nav-list { list-style: none; padding: 40px 0; }
+.tracen-v2-nav-item {
+    padding: 18px 0;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.tracen-v2-nav-header { color: var(--tracen-v2-gold); font-weight: bold; }
+.tracen-v2-nav-item span { margin-right: 15px; font-size: 14px; }
+.tracen-v2-nav-item:hover { padding-left: 10px; color: var(--tracen-v2-gold); }
+
+/* 底部异形按钮：利用 clip-path 还原图片中的票据切角 */
+.tracen-v2-sidebar-footer { margin-top: auto; padding-top: 30px; }
+.tracen-v2-fancy-btn {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    /* 核心：实现图片中的上下凹陷切角 */
+    clip-path: polygon(
+        0% 15%, 10% 0%, 90% 0%, 100% 15%, 
+        100% 85%, 90% 100%, 10% 100%, 0% 85%
+    );
+}
+.tracen-v2-btn-solid { background: var(--tracen-v2-gold); color: white; }
+.tracen-v2-btn-outline { 
+    background: transparent; 
+    color: var(--tracen-v2-gold); 
+    border: 1px solid var(--tracen-v2-gold); 
+}
+/* 针对校徽圆圈容器的限制 */
+.tracen-v2-logo-circle {
+    width: 100px;              /* 建议设为 100px 到 150px 之间 */
+    height: 100px;             /* 保持宽高一致以维持圆形 */
+    margin: 0 auto 15px;      /* 居中，并与下方校训保持距离 */
+    background: rgba(255, 255, 255, 0.2); /* 给校徽加个淡淡的底色 */
+    border-radius: 50%;        /* 确保是正圆 */
+    display: flex;             /* 以下三行确保图片在圆圈内完美居中 */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;          /* 关键：隐藏超出圆圈的部分 */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 针对图片的直接限制 */
+.tracen-v2-logo-circle img {
+    width: 85%;                /* 图片占圆圈宽度的 85%，留一点边距更美观 */
+    height: auto;              /* 自动调整高度，防止变形 */
+    object-fit: contain;       /* 确保图片完整展示，不被拉伸或裁剪 */
+}
+
+/* 整体布局容器 */
+.tracen-pku-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 右侧主体：避让侧边栏 */
+.tracen-main-body {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+/* 核心：限制宽度的居中容器 */
+.tracen-centered-wrapper {
+    max-width: 1000px; /* 控制右侧内容的宽度，防止拉伸 */
+    margin: 0 auto;    /* 居中 */
+    padding: 0 20px;
+}
+
+/* 顶部卡片 */
+.tracen-hero-section {
+    margin-bottom: 30px;
+}
+.tracen-card-hero {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.tracen-card-hero img { width: 100%; display: block; }
+.tracen-hero-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 20px; color: white;
+}
+
+/* 模块格布局 */
+.tracen-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 两列排布 */
+    gap: 20px;
+}
+
+.tracen-info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 4px solid var(--tracen-red); /* 顶部红条装饰 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.tracen-card-title {
+    color: var(--tracen-red);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.tracen-list { list-style: none; padding: 0; }
+.tracen-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95rem;
+}
+.tracen-list li span { color: var(--tracen-red); font-weight: bold; margin-right: 8px; }
+
+/* 快捷图标区 */
+.tracen-icon-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+.tracen-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.tracen-icon-item:hover { color: var(--tracen-gold); }

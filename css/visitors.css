@@ -1,0 +1,73 @@
+/* 基础变量 */
+:root {
+    --tracen-red: #8c0712;   /* 学院深红 */
+    --turf-green: #3cb371;   /* 草地绿 */
+    --victory-gold: #ffce44; /* 胜利金 */
+    --dark-bg: #2c2423;      /* 建筑板块深色背景 */
+}
+
+/* 居中容器 */
+.centered-content {
+    max-width: 1100px;
+    margin: 120px auto;
+    padding: 0 20px;
+}
+
+/* 1. 顶部样式 */
+.visitor-header {
+    background-color: var(--turf-green);
+    padding: 40px 0;
+    color: white;
+}
+.visitor-nav {
+    display: flex; gap: 40px; margin-top: 30px;
+}
+.visitor-nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none; font-size: 16px;
+}
+
+/* 2. 地图板块 */
+.map-wrapper {
+    display: flex; gap: 40px; padding: 60px 0;
+}
+.map-sidebar { width: 200px; border-left: 4px solid var(--tracen-red); padding-left: 20px; }
+.route-btn {
+    display: block; width: 100%; padding: 10px; margin-bottom: 5px;
+    background: #eee; border: none; cursor: pointer;
+}
+.route-btn.active { background: var(--tracen-red); color: white; }
+.map-visual { flex: 1; position: relative; }
+.map-visual img { width: 100%; border-radius: 4px; }
+.map-intro { margin-top: 20px; border-top: 1px solid #ddd; padding-top: 15px; }
+
+/* 3. 生活服务网格 */
+.convenience-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: repeat(2, 220px);
+    gap: 15px; margin-top: 40px;
+}
+.grid-main-pic { grid-row: span 2; }
+.grid-main-pic img {object-fit: cover; }
+.grid-item {
+    background: #f5f3f0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; transition: 0.3s;
+}
+.grid-item:hover { background: var(--victory-gold); color: white; }
+.grid-item .icon { font-size: 32px; margin-bottom: 10px; }
+
+/* 4. 建筑一览 */
+.building-gallery-section { background: var(--dark-bg); color: white; padding: 80px 0; }
+.building-matrix {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 30px;
+}
+.b-card {
+    background: rgba(255,255,255,0.1); padding: 15px; text-align: center; font-size: 13px;
+}
+.b-card.active-red {
+    background: var(--tracen-red); position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+.filter-tabs { display: flex; gap: 20px; margin-bottom: 20px; }
+.tab.active { border-bottom: 2px solid var(--victory-gold); }

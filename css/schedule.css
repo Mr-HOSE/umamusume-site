@@ -1,0 +1,100 @@
+.schedule-section {
+    /* 修改：限制最大宽度并居中 */
+    max-width: 1200px; /* 从1200px缩小到1000px，让内容更紧凑 */
+    margin: 60px auto; /* 上下保持间距，左右自动居中 */
+    padding: 0 20px;   /* 增加一点内边距，防止手机端贴边 */
+    
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* 标题新样式 */
+.academic-title {
+    border-bottom: 2px solid #2d5a27;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+}
+
+.academic-title h2 {
+    font-size: 26px;
+    color: #2d5a27;
+    font-weight: normal;
+}
+
+.academic-title h2 span {
+    font-size: 16px;
+    color: #999;
+    margin-left: 10px;
+}
+
+/* 布局控制 */
+.calendar-layout {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+/* 左侧列表微调 */
+.schedule-list {
+    flex: 0 0 550px;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-left: 5px solid #2d5a27;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.date-box {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d5a27;
+    margin-right: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #eee;
+}
+
+.info-box h4 { margin: 0 0 5px 0; color: #333; }
+.info-box p { margin: 0; font-size: 14px; color: #666; }
+
+/* 右侧日历卡片 */
+.calendar-widget {
+    flex: 0 0 320px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 4px;
+    height: fit-content;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: bold;
+    color: #2d5a27;
+    margin-bottom: 15px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.calendar-grid span {
+    padding: 5px 0;
+}
+
+/* 标记有活动的日期 */
+.event-day {
+    background: #2d5a27;
+    color: white;
+    border-radius: 50%;
+}
+
+.prev-month { color: #ccc; }

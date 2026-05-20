@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="source/favicon.ico">
+    <title>特雷森学园</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/side.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/schedule.css">
+    <!-- 后续模块的样式继续添加 -->
+</head>
+<body>
+<!-- 顶部导航栏 -->
+<div class="utility-bar">
+    <div class="utility-links">
+        <a href="/pages/utility-links/Student.html" class="utility-link">学生</a>
+        <a href="/pages/utility-links/Staff.html" class="utility-link">教职工</a>
+        <a href="/pages/utility-links/Guest.html" class="utility-link">访客</a>
+        <a href="/pages/utility-links/Recruitment.html" class="utility-link">招聘</a>
+        <a href="/pages/utility-links/Library.html" class="utility-link">图书馆</a>
+        <a href="/pages/utility-links/Gymnasium.html" class="utility-link">体育馆</a>
+    </div>
+</div>
+
+<!-- 主导航区域 -->
+<header class="header" id="navbar">
+    <div class="header-inner">
+        <div class="logo-area">
+            <img src="source/schoolbadge.jpg" alt="校徽" class="logo">
+            <span class="site-name">中央特雷森学院</span>
+        </div>
+
+        <button id="menuToggle" class="menu-toggle">☰</button>
+        <nav class="nav" id="navMenu">
+            <ul class="nav-menu">
+                <li><a href="/index.html">首页</a></li>
+                <li class="has-submenu">
+                    <a href="/pages/intro/intro.html">学园介绍</a>
+                    <ul class="submenu">
+                        <li><a href="/pages/intro/history.html">校史</a></li>
+                        <li><a href="/pages/intro/compus.html">设施</a></li>
+                        <li><a href="/pages/intro/president.html">理事长</a></li>
+                        <li><a href="/pages/intro/motto.html">校训·校徽</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="/pages/faculty/faculty.html">人才师资</a>
+                    <ul class="submenu">
+                        <li><a href="/pages/faculty/teachers.html">教师团队</a></li>
+                        <li><a href="/pages/faculty/trainers.html">训练员</a></li>
+                        <li><a href="/pages/faculty/students.html">优秀学生</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="/pages/news/news.html">新闻活动</a>
+                    <ul class="submenu">
+                        <li><a href="/pages/news/notifications.html">最新通知</a></li>
+                        <li><a href="/pages/news/announcements.html">活动预告</a></li>
+                        <li><a href="/pages/news/reports.html">比赛报道</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/admission/admission.html">入学指南</a></li>
+            </ul>
+        <!-- 搜索框 -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索...">
+                <button type="button" id="searchBtn">🔍</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <!-- 轮播区 -->
+    <div class="hero" id="hero">
+        <!-- 这是一个横向的长条，用来承载所有图片 -->
+        <div class="hero-slides" id="heroSlides">
+            <!-- 图片由JS动态生成并插入到这里 -->
+        </div>
+    
+        <!-- 左右切换按钮 -->
+        <button class="hero-btn prev" id="prevBtn">❮</button>
+        <button class="hero-btn next" id="nextBtn">❯</button>
+    
+        <!-- 底部指示器小圆点 -->
+        <div class="hero-dots" id="heroDots"></div>
+    </div>
+
+    <!-- 校训 -->
+    <section class="motto">
+        <div class="motto-wrapper">
+            <p class="motto-text">一马当先，万马无光</p>
+            <p class="motto-en">Eclipse first, the rest nowhere.</p>
+        </div>
+    </section>
+
+    <!-- 新闻动态 -->
+    <section class="news-section">
+    <h2 class="news-title">特雷森学园 · 要闻</h2>
+    
+    <div class="news-grid">
+        <!-- 左侧大图卡片 (红) -->
+        <div class="news-card feature-card-red">
+            <img src="source/ind1.jpg" alt="夏季合宿">
+            <div class="news-card-overlay">
+                <h3>扎实开展“Twinkle Series”夏季合宿备赛与心态建设指导</h3>
+            </div>
+        </div>
+
+        <!-- 右侧小卡片 -->
+        <div class="news-card text-card">
+            <p>学生会召开例行扩大会议，会长鲁道夫象征传达关于加强基础素质训练的讲话精神</p>
+        </div>
+        <div class="news-card text-card">
+            <p>1991届毕业生赛马娘毕业30周年返校祭：传承永不放弃的奔跑精神</p>
+        </div>
+        <div class="news-card text-card">
+            <p>特雷森学园代表团访问法国隆尚马场，深度交流草地跑道适应性与长距离战术</p>
+        </div>
+        <div class="news-card text-card">
+            <p>学园举办建校纪念“粉丝感谢祭”系列活动：与粉丝共同见证梦想起航</p>
+        </div>
+
+        <!-- 下方四个小卡片 -->
+        <div class="news-card text-card">
+            <p>“胜利演唱会的魅力”——URA官员及特邀嘉宾大和赤骥讲述舞台表现力</p>
+        </div>
+        <div class="news-card text-card">
+            <p>“特雷森-极速未来马蹄铁联合实验室”成立，助力突破草地速极限</p>
+        </div>
+
+        <!-- 右下角大图卡片 (蓝) -->
+        <div class="news-card feature-card-blue">
+            <img src="source/wincd.png" alt="cd">
+            <div class="news-card-overlay">
+                <p>CD情报</p>
+                <h3>「WINNING LIVE 32」今日发售！</h3>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- 活动日程 -->
+    <section class="schedule-section">
+    <!-- 1. 新标题样式 -->
+    <div class="academic-title">
+        <h2>活动日程 <span>/ EVENT SCHEDULE</span></h2>
+    </div>
+
+    <div class="calendar-layout">
+        <!-- 2. 左侧日程列表 -->
+        <div class="schedule-list">
+            <div class="schedule-item">
+                <div class="date-box">05/10</div>
+                <div class="info-box">
+                    <h4>春季URA预选赛</h4>
+                    <p>各年级马娘于第一跑道进行资格角逐。</p>
+                </div>
+            </div>
+            <div class="schedule-item">
+                <div class="date-box">06/01</div>
+                <div class="info-box">
+                    <h4>特雷森学园祭</h4>
+                    <p>模拟商店、鬼屋、餐厅与特别Live等。</p>
+                </div>
+            </div>
+            <div class="schedule-item">
+                <div class="date-box">07/15</div>
+                <div class="info-box">
+                    <h4>夏季合宿</h4>
+                    <p>前往海边集训设施进行特训。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. 右侧日历组件 -->
+        <div class="calendar-widget">
+            <div class="calendar-header">2026年 5月</div>
+            <div class="calendar-grid">
+                <!-- 日历表头 -->
+                <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+                <!-- 填充日期 (示例) -->
+                <span class="prev-month">26</span><span class="prev-month">27</span><span class="prev-month">28</span><span class="prev-month">29</span><span class="prev-month">30</span><span>1</span><span>2</span>
+                <span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                <span class="event-day">10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span>
+                <span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span>
+                <span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- 队伍展示 -->
+    <section class="team-special-section">
+    <!-- 左侧垂直标题 -->
+    <div class="special-title">
+        <h2>人气队伍 · 特辑</h2>
+    </div>
+
+    <!-- 右侧卡片组 -->
+    <div class="team-cards-container">
+        <!-- Card 1: Spica -->
+        <div class="team-card card-spica">
+            <div class="team-card-overlay">
+                <div class="team-motto">我们的梦想，由此开始</div>
+                <h3 class="team-name">Team Spica</h3>
+            </div>
+        </div>
+
+        <!-- Card 2: Rigil -->
+        <div class="team-card card-rigil">
+            <div class="team-card-overlay">
+                <div class="team-motto">常胜之师，闪耀巅峰</div>
+                <h3 class="team-name">Team Rigil</h3>
+            </div>
+        </div>
+
+        <!-- Card 3: Canopus -->
+        <div class="team-card card-canopus">
+            <div class="team-card-overlay">
+                <div class="team-motto">目标！属于凡人的奇迹</div>
+                <h3 class="team-name">Team Canopus</h3>
+            </div>
+        </div>
+
+        <!-- Card 4: Sirius -->
+        <div class="team-card card-sirius">
+            <div class="team-card-overlay">
+                <div class="team-motto">引导新时代的星辰</div>
+                <h3 class="team-name">Team Sirius</h3>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="quick-links anime-style">
+        <div class="container link-grid">
+            <a href="/pages/admission/admission.html" class="link-item">
+                <div class="icon-circle bg-pink"><i class="fas fa-edit"></i></div>
+                <span>报名入学</span>
+            </a>
+            <a href="/pages/intro/compus.html" class="link-item">
+                <div class="icon-circle bg-green"><i class="fas fa-running"></i></div>
+                <span>训练设施</span>
+            </a>
+            <a href="/pages/news/news.html" class="link-item">
+                <div class="icon-circle bg-gold"><i class="fas fa-trophy"></i></div>
+                <span>URA赛事</span>
+            </a>
+            <a href="/pages/building.html" class="link-item">
+                <div class="icon-circle bg-blue"><i class="fas fa-shopping-cart"></i></div>
+                <span>建设中</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="footer-links-bar">
+    <div class="links-container">
+        <span class="links-label">友情链接：</span>
+        <a href="/pages/building.html">日本赛马协会 (URA)</a>
+        <a href="/pages/building.html">特雷森学园后援会</a>
+        <a href="/pages/building.html">赛马娘综合信息网</a>
+        <a href="/pages/building.html">Twinkle Series 官方票务</a>
+    </div>
+    </div>
+
+    <!-- 悬浮交互组件 -->
+    <div class="side-mascot-panel" id="sideMascotPanel">
+    <div class="mascot-bubble" id="mascotBubble">兄长大人，今天要加油哦！</div>
+    
+    <div class="mascot-avatar-wrap">
+        <img src="source/rice1.png" alt="吉祥物" class="mascot-img" id="mascotImg">
+        <span class="music-note-ani" id="musicNote">♪</span>
+    </div>
+
+    <div class="bgm-widget">
+        <button id="bgmPlayBtn" class="bgm-btn" title="播放/暂停">
+            <span class="btn-icon">▶</span>
+        </button>
+        <div class="volume-slider-wrap">
+            <span class="vol-icon">⏸</span>
+            <input type="range" id="bgmVolume" class="bgm-slider" min="0" max="1" step="0.05" value="0.5">
+        </div>
+    </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top">▲</button>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+    <div class="footer-container">
+        <!-- 上层：Logo 部分 -->
+        <div class="footer-logo">
+            <img src="source/schoolbadge.png" alt="特雷森学园Logo">
+            <div class="logo-text">
+                <span class="cn-name">中央特雷森学园</span>
+                <span class="en-name">CENTRE TRAICEN ACADEMY</span>
+            </div>
+        </div>
+
+        <!-- 下层：版权与备案信息 -->
+        <div class="footer-info">
+            <span>版权所有©中央特雷森学园</span>
+            <span class="divider">|</span>
+            <span>地址：东京都府中市特雷森通1号</span>
+            <span class="divider">|</span>
+            <span>反馈意见：training@traicen.edu.jp</span>
+            <span class="divider">|</span>
+            <span>赛马娘备案口口口口号-1</span>
+            <span class="divider">|</span>
+            <span>府中公网安备 口口口口 号</span>
+        </div>
+    </div>
+    </footer>
+
+    <script src="js/mascot.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/news.js"></script>
+    <script src="js/scroll-header.js"></script>
+    <script src="js/schedule.js"></script>
+    <script src="js/teams.js"></script>
+    <script src="js/effects.js"></script>
+    <!-- 其他模块的脚本 -->
+</body>
+</html>

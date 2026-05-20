@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/source/favicon.ico">
+    <title>特雷森学园</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/side.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/link-student.css">
+    <!-- 后续模块的样式继续添加 -->
+</head>
+<body>
+
+<nav class="side-nav-bar">
+    <div class="side-nav-header">
+        <span>学生</span>
+    </div>
+    <ul class="side-nav-menu">
+        <li><a href="#academic">学习学术</a></li>
+        <li><a href="#affairs">学生事务</a></li>
+        <li><a href="#business">业务办理</a></li>
+        <li><a href="#life">生活服务</a></li>
+        <li><a href="#department">相关部门</a></li>
+    </ul>
+</nav>
+
+<!-- 顶部导航栏 -->
+<div class="utility-bar">
+    <div class="utility-links">
+        <a href="/pages/utility-links/Student.html" class="utility-link">学生</a>
+        <a href="/pages/utility-links/Staff.html" class="utility-link">教职工</a>
+        <a href="/pages/utility-links/Guest.html" class="utility-link">访客</a>
+        <a href="/pages/utility-links/Recruitment.html" class="utility-link">招聘</a>
+        <a href="/pages/utility-links/Library.html" class="utility-link">图书馆</a>
+        <a href="/pages/utility-links/Gymnasium.html" class="utility-link">体育馆</a>
+    </div>
+</div>
+
+<!-- 主导航区域 -->
+<header class="header" id="navbar">
+    <div class="header-inner">
+        <div class="logo-area">
+            <img src="/source/schoolbadge.jpg" alt="校徽" class="logo">
+            <span class="site-name">中央特雷森学院</span>
+        </div>
+
+        <button id="menuToggle" class="menu-toggle">☰</button>
+        <nav class="nav" id="navMenu">
+            <ul class="nav-menu">
+                <li><a href="/index.html">首页</a></li>
+                <li class="has-submenu">
+                    <a href="/pages/intro/intro.html">学园介绍</a>
+                    <ul class="submenu">
+                        <li><a href="/pages/intro/history.html">校史</a></li>
+                        <li><a href="/pages/intro/compus.html">设施</a></li>
+                        <li><a href="/pages/intro/president.html">理事长</a></li>
+                        <li><a href="/pages/intro/motto.html">校训·校徽</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="/pages/faculty/faculty.html">人才师资</a>
+                    <ul class="submenu">
+                        <li><a href="/pages/faculty/teachers.html">教师团队</a></li>
+                        <li><a href="/pages/faculty/trainers.html">训练员</a></li>
+                        <li><a href="/pages/faculty/students.html">优秀学生</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="/pages/news/news.html">新闻活动</a>
+                    <ul class="submenu">
+                        <li><a href="/pages/news/notifications.html">最新通知</a></li>
+                        <li><a href="/pages/news/announcements.html">活动预告</a></li>
+                        <li><a href="/pages/news/reports.html">比赛报道</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/admission/admission.html">入学指南</a></li>
+            </ul>
+        <!-- 搜索框 -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索...">
+                <button type="button" id="searchBtn">🔍</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="student-page-section">
+    <div class="section-header">
+        <h2>学习学术</h2>
+    </div>
+
+    <div class="student-grid">
+        <!-- 左侧大块：课程  -->
+        <div class="student-card card-deep-red">
+            <h3>课程</h3>
+            <ul class="link-list">
+                <li><a href="#">暑期集训</a></li>
+                <li><a href="#">国际暑期学校</a></li>
+                <li><a href="#">凯旋杯暑期特训</a></li>
+                <li><a href="#">海外学习</a></li>
+                <li><a href="#">辅修</a></li>
+                <li><a href="#">小班课教学</a></li>
+                <li><a href="#">外语授课</a></li>
+                <li><a href="#">马课</a></li>
+                <li><a href="#">教学网</a></li>
+                <li><a href="#">公开课</a></li>
+            </ul>
+        </div>
+
+        <!-- 右上：工具 (白色) -->
+        <div class="student-card card-white">
+            <h3>工具</h3>
+            <ul class="link-list colored">
+                <li><a href="#">选课系统</a></li>
+                <li><a href="#">空闲教室查询</a></li>
+                <li><a href="#">转交流学分</a></li>
+                <li><a href="#">多语言成绩单申办</a></li>
+                <li><a href="#">转系转专业程序</a></li>
+                <li><a href="#">休学停学复学程序</a></li>
+            </ul>
+        </div>
+
+        <!-- 右下左：通知 (灰色) -->
+        <div class="student-card card-grey">
+            <h3>通知</h3>
+            <ul class="link-list horizontal">
+                <li><a href="#">初中部通知</a></li>
+                <li><a href="#">高中部通知</a></li>
+            </ul>
+        </div>
+
+        <!-- 右下右：图片 (装饰图) -->
+        <div class="student-card card-img-bg">
+            <!-- 仅作为背景装饰 -->
+        </div>
+    </div>
+</section>
+
+<section class="student-affairs-section">
+    <div class="affairs-container">
+        <!-- 左侧文字区 -->
+        <div class="affairs-content">
+            <h2 class="affairs-main-title">学生事务</h2>
+            
+            <!-- 通知子区块 -->
+            <div class="affairs-group">
+                <h3>通知</h3>
+                <ul class="affairs-links">
+                    <li><a href="#">学业奖学金通知</a></li>
+                    <li><a href="#">学生社团通知</a></li>
+                    <li><a href="#">学生会活动通知</a></li>
+                </ul>
+            </div>
+            
+            <hr class="affairs-divider">
+
+            <!-- 工具子区块 -->
+            <div class="affairs-group">
+                <h3>工具</h3>
+                <ul class="affairs-links">
+                    <li><a href="#">运动保险理赔程序</a></li>
+                    <li><a href="#">助学金申请程序</a></li>
+                    <li><a href="#">心理咨询预约程序</a></li>
+                    <li><a href="#">社团活动教室借用</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 右侧图片区 -->
+        <div class="affairs-image">
+            <img src="/source/jacket_icon_l_1032.png" alt="学生活动">
+        </div>
+    </div>
+</section>
+
+<section class="life-service-section">
+    <h2 class="section-title">生活服务</h2>
+    <div class="life-container">
+        <!-- 背景图片层 -->
+        <div class="life-image-wrap">
+            <img src="/source/OguriCap.webp" alt="校园生活">
+            <!-- 红色装饰边框 -->
+            <div class="red-border-deco"></div>
+        </div>
+
+        <!-- 悬浮文字内容层 -->
+        <div class="life-content-card">
+            <ul class="life-links">
+                <li><a href="#">网络服务</a></li>
+                <li><a href="#">校园卡</a></li>
+                <li><a href="#">演出公告</a></li>
+                <li><a href="#">网络缴费方式</a></li>
+                <li><a href="#">食堂营业时间</a></li>
+                <li><a href="#">文体活动</a></li>
+                <li><a href="#">常用电话</a></li>
+                <li><a href="#">校历</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <section class="quick-links anime-style">
+        <div class="container link-grid">
+            <a href="/pages/admission/admission.html" class="link-item">
+                <div class="icon-circle bg-pink"><i class="fas fa-edit"></i></div>
+                <span>报名入学</span>
+            </a>
+            <a href="/pages/intro/compus.html" class="link-item">
+                <div class="icon-circle bg-green"><i class="fas fa-running"></i></div>
+                <span>训练设施</span>
+            </a>
+            <a href="/pages/news/news.html" class="link-item">
+                <div class="icon-circle bg-gold"><i class="fas fa-trophy"></i></div>
+                <span>URA赛事</span>
+            </a>
+            <a href="/pages/building.html" class="link-item">
+                <div class="icon-circle bg-blue"><i class="fas fa-shopping-cart"></i></div>
+                <span>建设中</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="footer-links-bar">
+    <div class="links-container">
+        <span class="links-label">友情链接：</span>
+        <a href="/pages/building.html">日本赛马协会 (URA)</a>
+        <a href="/pages/building.html">特雷森学园后援会</a>
+        <a href="/pages/building.html">赛马娘综合信息网</a>
+        <a href="/pages/building.html">Twinkle Series 官方票务</a>
+    </div>
+    </div>
+
+    <!-- 悬浮交互组件 -->
+    <div class="side-mascot-panel" id="sideMascotPanel">
+    <div class="mascot-bubble" id="mascotBubble">训练员，今天要加油哦！</div>
+    
+    <div class="mascot-avatar-wrap">
+        <img src="/source/rice1.png" alt="吉祥物" class="mascot-img" id="mascotImg">
+        <span class="music-note-ani" id="musicNote">♪</span>
+    </div>
+
+    <div class="bgm-widget">
+        <button id="bgmPlayBtn" class="bgm-btn" title="播放/暂停">
+            <span class="btn-icon">▶</span>
+        </button>
+        <div class="volume-slider-wrap">
+            <span class="vol-icon">⏸</span>
+            <input type="range" id="bgmVolume" class="bgm-slider" min="0" max="1" step="0.05" value="0.5">
+        </div>
+    </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top">▲</button>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+    <div class="footer-container">
+        <!-- 上层：Logo 部分 -->
+        <div class="footer-logo">
+            <img src="/source/schoolbadge.png" alt="特雷森学园Logo">
+            <div class="logo-text">
+                <span class="cn-name">中央特雷森学园</span>
+                <span class="en-name">CENTRE TRAICEN ACADEMY</span>
+            </div>
+        </div>
+
+        <!-- 下层：版权与备案信息 -->
+        <div class="footer-info">
+            <span>版权所有©中央特雷森学园</span>
+            <span class="divider">|</span>
+            <span>地址：东京都府中市特雷森通1号</span>
+            <span class="divider">|</span>
+            <span>反馈意见：training@traicen.edu.jp</span>
+            <span class="divider">|</span>
+            <span>赛马娘备案口口口口号-1</span>
+            <span class="divider">|</span>
+            <span>府中公网安备 口口口口 号</span>
+        </div>
+    </div>
+    </footer>
+
+    <script src="/js/mascot.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/hero.js"></script>
+    <script src="/js/news.js"></script>
+    <script src="/js/scroll-header.js"></script>
+    <script src="/js/schedule.js"></script>
+    <script src="/js/teams.js"></script>
+    <script src="/js/effects.js"></script>
+    <!-- 其他模块的脚本 -->
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector('.faq-question');
+        questionBtn.addEventListener('click', () => {
+            // 关闭其他打开的
+            faqItems.forEach(other => {
+                if (other !== item) other.classList.remove('open');
+            });
+            // 切换当前
+            item.classList.toggle('open');
+        });
+    });
+});
+</script>
+
+</body>
+</html>

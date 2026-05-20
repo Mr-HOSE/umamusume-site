@@ -1,0 +1,86 @@
+:root {
+    --tracen-gym-green: #7a8a2d;
+    --tracen-gym-red: #8c0712;
+    --tracen-gym-gold: #e6a23c;
+    --sidebar-v2-width: 300px;
+}
+
+/* 布局控制 */
+.tracen-gym-main {
+    margin-left: var(--sidebar-v2-width);
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+.tracen-gym-centered-container {
+    max-width: 1000px; /* 居中限制 */
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* 体育馆 Banner */
+.tracen-gym-banner {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 350px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin-bottom: 40px;
+}
+.tracen-gym-banner img { width: 100%; height: 100%; object-fit: cover; }
+.tracen-gym-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 30px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+/* 状态卡片网格 */
+.tracen-gym-status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.tracen-gym-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid var(--tracen-gym-green);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.tracen-gym-card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+}
+.status-tag {
+    font-size: 12px; padding: 3px 8px; border-radius: 20px;
+}
+.status-tag.online { background: #e6f7ed; color: #2ecc71; }
+.status-tag.warning { background: #fff5e6; color: #f39c12; }
+
+/* 课表样式 */
+.tracen-gym-section-box {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.tracen-gym-title {
+    color: var(--tracen-gym-red);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.tracen-gym-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tracen-gym-table th {
+    text-align: left; background: #fafafa; padding: 15px; color: #666;
+}
+.tracen-gym-table td {
+    padding: 15px; border-bottom: 1px solid #eee; font-size: 14px;
+}

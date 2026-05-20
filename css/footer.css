@@ -1,0 +1,101 @@
+.footer-links-bar {
+    background-color: #f5f5f5; /* 浅灰色背景，区分主体和页脚 */
+    border-top: 1px solid #e0e0e0;
+    padding: 10px 0;
+}
+
+.links-container {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 0;
+    font-size: 13px;
+    align-items: center;
+}
+
+.links-label { 
+    color: #666; 
+    font-weight: bold; 
+    margin-right: 100px; 
+}
+
+.links-container a {
+    color: #888;
+    text-decoration: none;
+    margin-right: 60px;
+}
+
+.links-container a:hover { color: #2d5a27; }
+
+.site-footer {
+    background-color: #26211f; /* 深咖啡黑色背景 */
+    color: #ffffff;
+    padding: 40px 0 30px;
+    font-family: "Microsoft YaHei", sans-serif;
+    margin-top: 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 全局居中 */
+}
+
+/* Logo 样式 */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.footer-logo img {
+    height: 60px; /* 根据实际logo比例调整 */
+    margin-right: 15px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text .cn-name {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo-text .en-name {
+    font-size: 12px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* 下方信息流样式 */
+.footer-info {
+    display: flex;
+    flex-wrap: wrap; /* 适配窄屏幕自动换行 */
+    justify-content: center;
+    font-size: 13px;
+    color: #d1d1d1;
+}
+
+.footer-info span {
+    margin: 5px 0;
+}
+
+.footer-info .divider {
+    margin: 0 15px;
+    color: #555; /* 分隔符颜色稍淡 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .footer-info .divider {
+        display: none; /* 手机端隐藏分隔符 */
+    }
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}

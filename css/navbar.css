@@ -1,0 +1,241 @@
+/* ---------- 工具条 (平台跳转) ---------- */
+.utility-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    background-color: #1f4f2b;        /* 深绿 */
+    padding: 0.4rem 2rem;
+    text-align: center;
+}
+.utility-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.utility-link {
+    color: #FFF9E6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.utility-link:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+/* ===== 头部整体 ===== */
+/* 整体容器 */
+.header {
+    position: fixed;
+    top: 28px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    transition: background-color 0.3s ease; box-shadow: 0.3s ease;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    border-bottom: 3px solid transparent;
+    box-shadow: var( --shadow);
+}
+.header.scrolled {
+    background-color: rgba(255, 249, 230, 0.95);
+    backdrop-filter: blur(10px);
+    color: #2E7D32;
+    text-shadow: none;
+    border-bottom-color: #2E7D32;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header.sticky-top {
+    top: 0;
+    background-color: rgba(255, 249, 230, 0.95);
+    backdrop-filter: blur(10px);
+    color: #2E7D32;
+    text-shadow: none;
+    border-bottom-color: #2E7D32;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 0.5rem 2rem;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0.4rem 2rem;
+    gap: 4rem;                        /* 三个区块之间的间距 */
+}
+
+/* Logo 区域（左） */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.logo {
+    width: 48px;
+    height: 48px;
+    background-color: #e0d5c0;
+    border-radius: 50%;
+    border: 2px solid #FFB74D;
+}
+.site-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2E7D32;
+    text-shadow: 2px 2px 0 #ffe5b4;
+    white-space: nowrap;
+}
+
+/* 导航 + 搜索的容器 (中间+右侧) */
+.nav {
+    display: flex;
+    align-items: center;
+    flex: 1;                            /* 占据剩余空间 */
+    justify-content: space-between;     /* 菜单靠左，搜索框靠右 */
+}
+
+/* 菜单列表 */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+}
+.nav-menu a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    color: #444;
+    padding: 0.5rem 0.2rem;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+.nav-menu a:hover {
+    color: var(--primary);
+    border-color: 2px solid var(--primary);
+    border-bottom-color: #FFB74D;
+}
+
+.has-submenu {
+    position: relative;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #FFF9E6;
+    border: 2px solid #2E7D32;
+    border-radius: 0 0 12px 12px;
+    list-style: none;
+    z-index: 200;
+    min-width: 180px;
+}
+.has-submenu:hover .submenu {
+    display: block;
+}
+.submenu li a {
+    display: block;
+    padding: 0.6rem 1.5rem;
+    color: #2E7D32;
+}
+.submenu li a:hover {
+    background: #FFB74D;
+    color: #1f4f2b;
+}
+
+/* 搜索框 (右) */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: rgba(46, 125, 50, 0.15);
+    border-radius: 20px;
+    padding: 4px 10px;
+    margin-left: 80px;                  /* 与菜单拉开距离 */
+}
+.search-box input {
+    background: none;
+    border: none;
+    outline: none;
+    color: inherit;
+    padding: 6px 8px;
+    width: 140px;
+    font-size: 0.9rem;
+}
+.search-box input::placeholder {
+    color: #8a9b6e;
+}
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: inherit;
+}
+
+/* 移动端汉堡按钮 (桌面隐藏) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid #2E7D32;
+    color: #2E7D32;
+    font-size: 2rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ========== 响应式：小屏幕 ========== */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-wrap: wrap;
+    }
+    /* 显示汉堡按钮（放在第一行右侧） */
+    .menu-toggle {
+        display: block;
+        margin-left: auto;              /* 靠右 */
+    }
+
+    /* 导航容器默认隐藏，展开后占满整行 */
+    .nav {
+        display: none;
+        flex: 1 1 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 0;
+    }
+    .nav.active {
+        display: flex;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .search-box {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .search-box input {
+        flex: 1;
+    }
+
+    /* 调整 Logo 和名称大小，防止撑开 */
+    .site-name {
+        font-size: 1.3rem;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+}

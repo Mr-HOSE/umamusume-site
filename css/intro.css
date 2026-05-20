@@ -1,0 +1,250 @@
+ .intro-main {
+        max-width: 1000px;
+        margin: 120px auto 60px;
+        padding: 0 20px;
+    }
+    .intro-main h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2d5a27;
+        margin-bottom: 15px;
+    }
+    .intro-main .lead {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #555;
+        max-width: 720px;
+        margin: 0 auto 45px;
+        line-height: 1.7;
+    }
+    .nav-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .nav-card {
+        background: white;
+        border-radius: 16px;
+        padding: 35px 20px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-decoration: none;
+        color: #333;
+    }
+    .nav-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+    .nav-card .icon {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+    }
+    .nav-card h3 {
+        color: #2d5a27;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+    }
+    .nav-card p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+    }
+
+     .history-main {
+        max-width: 900px;
+        margin: 120px auto 60px;
+        padding: 0 20px;
+    }
+    .history-main h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2d5a27;
+        margin-bottom: 10px;
+    }
+    .subtitle {
+        text-align: center;
+        color: #777;
+        margin-bottom: 50px;
+        font-size: 1.1rem;
+    }
+    .timeline {
+        position: relative;
+        padding-left: 40px;
+        border-left: 3px solid #f0c45a;
+    }
+    .timeline-item {
+        margin-bottom: 45px;
+        position: relative;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -49px;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #2d5a27;
+        border: 3px solid #f0c45a;
+    }
+    .timeline-year {
+        font-weight: bold;
+        color: #2d5a27;
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+    .timeline-desc {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        color: #555;
+        line-height: 1.7;
+        font-size: 0.95rem;
+    }
+
+     .facility-main {
+        max-width: 1100px;
+        margin: 120px auto 60px;
+        padding: 0 20px;
+    }
+    .facility-main h1 {
+        text-align: center;
+        color: #2d5a27;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+    }
+    .facility-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    .facility-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+    }
+    .facility-card:hover {
+        transform: translateY(-5px);
+    }
+    .facility-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .facility-info {
+        padding: 20px;
+    }
+    .facility-info h3 {
+        color: #2d5a27;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    .facility-info p {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .staff-main {
+        max-width: 1000px;
+        margin: 120px auto 60px;
+        padding: 0 20px;
+    }
+    .staff-main h1 {
+        text-align: center;
+        color: #2d5a27;
+        margin-bottom: 45px;
+        font-size: 2.5rem;
+    }
+    .staff-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 25px;
+    }
+    .staff-card {
+        background: white;
+        border-radius: 16px;
+        padding: 30px 20px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+    }
+    .staff-card:hover {
+        transform: translateY(-5px);
+    }
+    .staff-avatar {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #f0c45a;
+        margin-bottom: 18px;
+    }
+    .staff-card h3 {
+        color: #333;
+        margin-bottom: 6px;
+        font-size: 1.2rem;
+    }
+    .staff-role {
+        display: inline-block;
+        background: #3cb371;
+        color: white;
+        padding: 3px 14px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+    .staff-card p {
+        color: #555;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+
+    .motto-main {
+        max-width: 800px;
+        margin: 120px auto 60px;
+        padding: 0 20px;
+        text-align: center;
+    }
+    .emblem-img {
+        width: 200px;
+        margin-bottom: 30px;
+        border-radius: 16px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .motto-text {
+        font-size: 3.2rem;
+        font-weight: bold;
+        color: #2d5a27;
+        margin-bottom: 10px;
+        font-family: "Source Han Serif", serif;
+    }
+    .motto-en {
+        font-size: 1.3rem;
+        color: #8a9b6e;
+        font-style: italic;
+        margin-bottom: 40px;
+    }
+    .description {
+        text-align: left;
+        line-height: 1.8;
+        color: #444;
+        background: white;
+        padding: 35px;
+        border-radius: 16px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin: 25px 0;
+        font-size: 1rem;
+    }
+    .description h3 {
+        color: #2d5a27;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }

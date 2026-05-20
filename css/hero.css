@@ -1,0 +1,127 @@
+/* ========== 全屏轮播图核心样式 ========== */
+
+/* 最外层大容器，撑满整个屏幕宽度 */
+.hero {
+    position: relative;          /* 为子元素的绝对定位提供锚点 */
+    width: 100%;                 /* 宽度100% */
+    height: 100vh;              /* 高度100vh，确保占满整个视口高度 */
+    overflow: hidden;            /* 裁切掉超出容器的部分，确保只显示一张图 */
+    margin: 0;                   /* 清除默认边距 */
+    padding: 0;
+    background-color: #000;      /* 图片加载前显示黑色背景 */
+}
+
+/* 针对不同尺寸的屏幕，调整轮播图的高度
+@media (min-width: 1200px) {
+    .hero {
+        height: 600px;
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+} */
+
+/* 
+ * 横向滚动容器 (Flex布局)
+ * 这是实现滑动切换效果的关键
+ */
+.hero-slides {
+    display: flex;               /* 启用弹性盒子，让所有图片排成一行 */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    /* 添加平滑的过渡动画，让滑动更流畅 */
+    will-change: transform;      /* 性能优化，提前告知浏览器此元素会动 */
+}
+
+/* 单张幻灯片 */
+.hero-slide {
+    flex: 0 0 100%;              /* 
+                                   * flex-grow: 0 (不放大)
+                                   * flex-shrink: 0 (不缩小)
+                                   * flex-basis: 100% (基准宽度等于父容器宽度)
+                                   * 确保每张图片都占据独立的一屏 */
+    width: 100%;
+    height: 100%;
+}
+
+/* 幻灯片内的图片 */
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* 按比例填充容器，图片可能被裁切，但保证不变形 */
+    display: block;
+}
+
+/* 左右切换按钮 (公共样式) */
+.hero-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4); /* 半透明黑色背景 */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    transition: background-color 0.3s;
+    line-height: 1;
+}
+.hero-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* 左按钮 */
+.prev {
+    left: 10px;
+    border-radius: 0 4px 4px 0;
+}
+
+/* 右按钮 */
+.next {
+    right: 10px;
+    border-radius: 4px 0 0 4px;
+}
+
+/* 底部指示器容器 */
+.hero-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+/* 单个指示器小圆点 */
+.hero-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/* 激活状态的小圆点 */
+.hero-dot.active {
+    background: var(--gold, #f0c45a);
+    border-color: var(--gold, #f0c45a);
+}
+
+/* 移动端适配：按钮和圆点稍微缩小 */
+@media (max-width: 768px) {
+    .hero-btn {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+    .hero-dot {
+        width: 10px;
+        height: 10px;
+    }
+}

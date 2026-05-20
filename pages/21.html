@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>特雷森二十一点</title>
+    <style>
+        :root {
+            --turf-green: #3cb371; /* 赛场草地绿 */
+            --tracen-red: #8c0712; /* 学院深红 */
+            --victory-gold: #ffce44; /* 胜利金 */
+            --bg-dark: #1a1a1a;
+        }
+        body {
+            font-family: 'PingFang SC', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        /* 游戏桌面 */
+        #game-table {
+            width: 500px;
+            background-color: var(--turf-green);
+            border: 8px solid #5d4037;
+            border-radius: 50px;
+            padding: 30px;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .hand { margin: 20px 0; min-height: 120px; }
+        .cards-display { font-size: 40px; min-height: 60px; letter-spacing: 5px; }
+        
+        /* 按钮样式 */
+        .controls { margin-top: 20px; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            margin: 0 5px;
+            transition: 0.2s;
+            font-weight: bold;
+        }
+        #hit-btn { background-color: var(--victory-gold); color: #333; }
+        #stand-btn { background-color: white; color: #333; }
+        #new-game-btn { background-color: var(--tracen-red); color: white; }
+        button:disabled { background-color: #666; cursor: not-allowed; }
+        
+        #message { font-size: 20px; font-weight: bold; height: 30px; margin-top: 15px; color: var(--victory-gold); }
+    </style>
+</head>
+<body>
+
+<div id="game-table">
+    <div class="hand">
+        <div>中山庆典</div>
+        <div id="dealer-cards" class="cards-display">?</div>
+        <div id="dealer-score"></div>
+    </div>
+
+    <div class="hand">
+        <div>You</div>
+        <div id="player-cards" class="cards-display"></div>
+        <div id="player-score">点数: 0</div>
+    </div>
+
+    <div id="message">准备好挑战了吗？</div>
+
+    <div class="controls">
+        <button id="hit-btn" onclick="hit()" disabled>要牌 (Hit)</button>
+        <button id="stand-btn" onclick="stand()" disabled>停牌 (Stand)</button>
+        <button id="new-game-btn" onclick="startNewGame()">开赛 (New Game)</button>
+    </div>
+</div>
+
+<script>
+    let deck = [];
+    let playerHand = [];
+    let dealerHand = [];
+    let gameOver = false;
+
+    function createDeck() {
+        const suits = ['♠', '♥', '♣', '♦'];
+        const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        deck = [];
+        for (let suit of suits) {
+            for (let value of values) {
+                deck.push({ suit, value });
+            }
+        }
+    }
+
+    function shuffle() {
+        for (let i = deck.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [deck[i], deck[j]] = [deck[j], deck[i]];
+        }
+    }
+
+    function getCardValue(card) {
+        if (['J', 'Q', 'K'].includes(card.value)) return 10;
+        if (card.value === 'A') return 11;
+        return parseInt(card.value);
+    }
+
+    function calculateScore(hand) {
+        let score = 0;
+        let aces = 0;
+        for (let card of hand) {
+            score += getCardValue(card);
+            if (card.value === 'A') aces++;
+        }
+        while (score > 21 && aces > 0) {
+            score -= 10;
+            aces--;
+        }
+        return score;
+    }
+
+    function startNewGame() {
+        createDeck();
+        shuffle();
+        playerHand = [deck.pop(), deck.pop()];
+        dealerHand = [deck.pop(), deck.pop()];
+        gameOver = false;
+        
+        document.getElementById('hit-btn').disabled = false;
+        document.getElementById('stand-btn').disabled = false;
+        document.getElementById('message').innerText = "比赛中...";
+        updateUI();
+    }
+
+    function updateUI() {
+        document.getElementById('player-cards').innerText = playerHand.map(c => c.suit + c.value).join(' ');
+        document.getElementById('player-score').innerText = "点数: " + calculateScore(playerHand);
+        
+        if (gameOver) {
+            document.getElementById('dealer-cards').innerText = dealerHand.map(c => c.suit + c.value).join(' ');
+            document.getElementById('dealer-score').innerText = "点数: " + calculateScore(dealerHand);
+        } else {
+            document.getElementById('dealer-cards').innerText = dealerHand[0].suit + dealerHand[0].value + " ??";
+        }
+    }
+
+    function hit() {
+        playerHand.push(deck.pop());
+        updateUI();
+        if (calculateScore(playerHand) > 21) {
+            endGame("爆牌！对手获胜。");
+        }
+    }
+
+    function stand() {
+        gameOver = true;
+        while (calculateScore(dealerHand) < 17) {
+            dealerHand.push(deck.pop());
+        }
+        updateUI();
+        
+        const pScore = calculateScore(playerHand);
+        const dScore = calculateScore(dealerHand);
+        
+        if (dScore > 21 || pScore > dScore) {
+            endGame("一马当先！你赢了。");
+        } else if (pScore < dScore) {
+            endGame("惜败！继续努力。");
+        } else {
+            endGame("平局！不分伯仲。");
+        }
+    }
+
+    function endGame(msg) {
+        gameOver = true;
+        document.getElementById('message').innerText = msg;
+        document.getElementById('hit-btn').disabled = true;
+        document.getElementById('stand-btn').disabled = true;
+        updateUI();
+    }
+</script>
+</body>
+</html>
